@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: blanchedalmond;
+            position: relative;
+        }
+
+        /* 知道宽高的情况 */
+        /* .sub-box {
+            background-color: red;
+            text-align: center;
+            line-height: 50px;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -50px;
+
+        } */
+        /* .sub-box {
+            background-color: red;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            width: 100px;
+            height: 50px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+        } */
+        /* 不需要知道宽高 */
+        /* .sub-box {
+            background-color: red;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        } */
+
+        /* 使用flex弹性布局，只需要修改父级里面的样式：存在兼容问题  */
+        .box {
+            display: flex;
+            /*主轴在中间*/
+            justify-content: center;
+            /*交叉轴在中间*/
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="sub-box">
+            盒子模型
+        </div>
+    </div>
+</body>
+
+</html>
