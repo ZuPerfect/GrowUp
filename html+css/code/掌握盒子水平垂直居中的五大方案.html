@@ -13,67 +13,57 @@
         }
 
         .box {
-            width: 500px;
-            height: 500px;
-            background-color: blanchedalmond;
-            position: relative;
+            box-sizing: content-box;
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: 10px solid black;
+            background-color: red;
         }
 
-        /* 知道宽高的情况 */
-        /* .sub-box {
-            background-color: red;
-            text-align: center;
-            line-height: 50px;
-            width: 100px;
-            height: 50px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -25px;
-            margin-left: -50px;
+        .ie-box {
+            box-sizing: border-box;
+            padding: 50px;
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
 
-        } */
-        /* .sub-box {
-            background-color: red;
-            position: absolute;
-            text-align: center;
-            line-height: 50px;
-            width: 100px;
-            height: 50px;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-
-        } */
-        /* 不需要知道宽高 */
-        /* .sub-box {
-            background-color: red;
-            position: absolute;
-            text-align: center;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-        } */
-
-        /* 使用flex弹性布局，只需要修改父级里面的样式：存在兼容问题  */
-        .box {
+        .flex-box {
             display: flex;
-            /*主轴在中间*/
-            justify-content: center;
-            /*交叉轴在中间*/
-            align-items: center;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .flex-box-item{
+            background-color: rgb(136, 41, 41);
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
         }
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <div class="sub-box">
-            盒子模型
+    <div>
+        <div class="box">
+            标准盒子
+        </div>
+        <p></p>
+        <div class="ie-box">
+            IE盒子
+        </div>
+        <p></p>
+        <div class="flex-box">
+            <div class="flex-box-item">flex盒子</div>
+            <div class="flex-box-item">flex盒子</div>
+            <div class="flex-box-item">flex盒子</div>
         </div>
     </div>
+
 </body>
 
 </html>
