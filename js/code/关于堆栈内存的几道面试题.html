@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /******第一道题，求打印结果*******/
+        // let a = {}, b = '0', c = 0;
+        // a[b] = '珠峰';
+        // a[c] = '培训';
+        // console.log(a[b]);
+        //=>二问：对象和数组的区别
+
+
+        /******第二道题，求打印结果*******/
+        // let a={},b=Symbol('1'),c=Symbol('1');
+        // a[b]='珠峰';
+        // a[c]='培训';
+        // console.log(a[b]);
+        //=>二问：自己实现一个Symbol
+
+
+        /******第三道题，求打印结果*******/
+        let a = {},
+            b = {
+                n:'1'
+            },
+            c = {
+                m:'2'
+            };
+        a[b] = '珠峰';
+        a[c] = '培训';
+        console.log(a[b]);
+        //=>valueOf和toString的区别（涉及到拆装箱的问题）
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
