@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let obj = {
+            a: 100,
+            b: [1, 2, 3, { x: 10 }, [1, 2, 3]],
+            c: {
+                x: 10
+            },
+            d: /^\d+$/
+        };
+        /******浅克隆*******/
+        // 使用常规的方法
+        let obj2 = {};
+        let easyCopy = function (obj) {
+            let newObj = {};
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    newObj[key] = obj[key];
+                }
+            }
+            return newObj;
+        }
+        obj2 = easyCopy(obj);
+        // 使用ES6的方法
+        obj2 = { ...obj };
+
+        /******深克隆*******/
+        // 第一种方式
+        obj2 = JSON.parse(JSON.stringify(obj)); // 存在问题，某些对象转成字符串会有问题，比如Date、RegExp
+        // 特殊类型
+        //=>Date
+        var d = new Date();
+        console.log(JSON.parse(JSON.stringify(d))); //=>"2020-08-19T13:45:18.729Z" 变成了字符串
+
+        //=>RegExp
+        var r = new RegExp();
+        console.log(JSON.parse(JSON.stringify(r))); //=>{} 变成了一个空对象
+
+        // 第二种方式
+        let deepCopy = function (obj) {
+
+            if (typeof obj !== 'object') {
+                return obj;
+            }
+            if (obj === null) {
+                return null;
+            }
+            if (obj instanceof Date) {
+                return new Date(obj);
+            }
+            if (obj instanceof RegExp) {
+                return new RegExp(obj);
+            }
+
+            let newObj = new obj.constructor;
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    newObj[key] = deepCopy(obj[key]);
+                }
+            }
+            return newObj;
+        }
+
+        obj2 = deepCopy(obj);
+
+        console.log(obj, obj2);
+
+        var arr = [];
+        var arr1 = new arr.constructor;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

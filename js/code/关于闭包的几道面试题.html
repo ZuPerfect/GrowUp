@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /******第一道题，求打印结果*******/
+        // var test=(function(i){ // i属于外层函数作用域里面的值
+        //     return function(){
+        //         alert(i*=2); // 这里使用了外部外部作用域里面的值，因此该函数形成了闭包，但是需要注意的时候，alert输出的都是字符串，所以答案是'4'
+        //     }
+        // })(2);
+        // test(5);
+
+
+        /******第二道题，求打印结果*******/
+        var a = 0, b = 0;
+        function A(a) {
+            A = function (b) {
+                alert(a + b++);
+            }
+            alert(a++);
+        }
+        A(1);
+        A(2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
