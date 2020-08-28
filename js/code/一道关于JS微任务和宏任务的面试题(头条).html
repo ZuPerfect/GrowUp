@@ -1,3 +1,9 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2020-08-28 16:14:30
+ * @Description: file content
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        //创建函数 async1
         async function async1() {
             console.log('async1 start');
             await async2();
             console.log('async1 end');
         }
 
+        // 创建函数 async2
         async function async2() {
             console.log('async2');
         }
