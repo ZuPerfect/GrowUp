@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // TO_STRING实现
+        // var a = {
+        //     i: 0,
+        //     valueOf() {
+        //         return ++this.i;
+        //     }
+        // }
+        // 或者
+        // var a = {
+        //     i: 0,
+        //     toString() {
+        //         return ++this.i;
+        //     }
+        // }
+        // if (a == 1 && a == 2 && a == 3) {
+        //     console.log('成立');
+        // }
+
+
+        // 数据劫持实现
+        var i = 0;
+        Object.defineProperty(window, 'a', {
+            get() {
+                return ++i;
+            }
+        });
+        if (a == 1 && a == 2 && a == 3) {
+            console.log('成立');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
