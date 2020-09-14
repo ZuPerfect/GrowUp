@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //注册按键事件
+        document.addEventListener('keydown', function (event) {
+            switch (event.keyCode) {
+                case 32:
+                    alert("空格键");
+                    break;
+                case 1000000:
+                    alert("通过点击触发的按键事件");
+                    break;
+                default:
+                    alert(`任意键:${event.keyCode}`);
+                    break;
+            }
+        }, false);
+
+        // 点击事件
+        var clickCallback = function () {
+            alert("点击事件");
+            var evt = document.createEvent('UIEvents');
+            evt.keyCode = 1000000;
+            evt.initEvent('keydown', true, true);
+            document.body.dispatchEvent(evt);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="id" style="width:100px; height: 200px;background-color: #b1c2c2" onclick="clickCallback()">
+        点击我来触发按键事件
+    </div>
+
+</body>
+
+</html>
