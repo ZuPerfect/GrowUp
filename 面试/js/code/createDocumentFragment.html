@@ -1,0 +1,45 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2020-09-23 15:22:38
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button onclick="createEl()">常规创建节点</button>
+    <button onclick="createELPro()">文档碎片化创建节点</button>
+    <div>
+        <ul id="ul"></ul>
+    </div>
+</body>
+<script>
+    function createEl(params) {
+        var ul = document.getElementById('ul');
+        for (let i = 0; i < 2000000; i++) {
+            var li = document.createElement('li');
+            li.innerHTML = "index:" + i;
+            ul.appendChild(li);
+        }
+    }
+
+    function createELPro(params) {
+        var ul = document.getElementById('ul');
+        var fragment=document.createDocumentFragment();
+        for (let i = 0; i < 2000000; i++) {
+            var li = document.createElement('li');
+            li.innerHTML = "index:" + i;
+            fragment.appendChild(li);
+        }
+        ul.appendChild(fragment);
+    }
+</script>
+
+</html>
