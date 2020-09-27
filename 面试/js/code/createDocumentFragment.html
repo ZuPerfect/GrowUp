@@ -18,24 +18,32 @@
     <button onclick="createELPro()">文档碎片化创建节点</button>
     <div>
         <ul id="ul"></ul>
+        <ul id="ul1"></ul>
     </div>
 </body>
 <script>
+    var ul = document.getElementById('ul1');
+    for (let i = 0; i < 200000; i++) {
+        var li = document.createElement('li');
+        li.innerHTML = "index:" + i;
+        ul.appendChild(li);
+    }
+    
     function createEl(params) {
         var ul = document.getElementById('ul');
-        for (let i = 0; i < 2000000; i++) {
+        for (let i = 0; i < 200; i++) {
             var li = document.createElement('li');
-            li.innerHTML = "index:" + i;
+            li.innerHTML = "常规插入:" + i;
             ul.appendChild(li);
         }
     }
 
     function createELPro(params) {
         var ul = document.getElementById('ul');
-        var fragment=document.createDocumentFragment();
-        for (let i = 0; i < 2000000; i++) {
+        var fragment = document.createDocumentFragment();
+        for (let i = 0; i < 200; i++) {
             var li = document.createElement('li');
-            li.innerHTML = "index:" + i;
+            li.innerHTML = "文档碎片插入:" + i;
             fragment.appendChild(li);
         }
         ul.appendChild(fragment);
