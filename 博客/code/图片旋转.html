@@ -20,23 +20,38 @@
 
     .box {
       box-sizing: content-box;
-      width: 200px;
-      height: 200px;
+      /* width: 400px;
+      height: 400px; */
       padding: 50px;
     }
-    img{
-      width: 200px;
-      height: 200px;
-      -webkit-transform: rotate(90deg);/* Safari和Chrome */
+
+    img {
+      /* width: 400px;
+      height: 400px; */
+      width: 400px;
+      /* -webkit-transform: rotate(90deg); */
+      /* Safari和Chrome */
     }
   </style>
+
 </head>
 
 <body>
   <div class="box">
-    <img src="../img/home.jpg" alt="">
+    <button onclick="rotate()">旋转图片</button>
+    <img id="image" src="../img/home.jpg" alt="">
   </div>
-
+  <script>
+    var d = 0;
+    
+    function rotate() {
+      document.getElementById('image').style.transform = `rotate(${d += 10}deg)`;
+    }
+    
+    setInterval(() => {
+      rotate()
+    }, 10);
+  </script>
 </body>
 
 </html>
