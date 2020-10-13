@@ -1,0 +1,30 @@
+﻿html,body{
+    width: 100%;
+    height: 100%;
+    display: inline;
+    background-color: black;
+}
+/* 提示框样式（S） */
+#lx-tipDiv{
+    position: absolute;
+    width: 230px;
+    height: auto;
+    top: 43px;
+    left: 10px;
+    background-color: white;
+    font-size: 13px;
+}
+#lx-tipUl{
+    margin: 0px;
+    padding: 0px 0px;
+}
+#lx-tipUl li{
+    list-style:none;
+    padding:0px 10px';
+}
+#lx-tipUl li:hover{
+    background-color:#3385FF;
+    color: white;
+    cursor: pointer;
+}
+/*提示框样式（E）*/
