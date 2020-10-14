@@ -1,6 +1,11 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2020-10-14 15:27:28
+ * @Description: file content
+-->
+
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
