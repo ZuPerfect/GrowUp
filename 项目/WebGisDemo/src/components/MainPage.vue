@@ -4,23 +4,8 @@
  * @Description: file content
 -->
 <template>
-  <div class="hello">
-    <header>
-      <hgroup>
-        <h1>页眉主标题</h1>
-        <h1>页眉副标题</h1>
-      </hgroup>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <footer>
-      原创作者;版权信息;联系方式;文档相关链接等...
-    </footer>
+  <div class="main-page">
+    <div id="mapCon"></div>
   </div>
 </template>
 
@@ -31,10 +16,27 @@ export default {
     return {
       msg: '欢迎来到你的VUE'
     }
+  },
+  mounted() {
+    var map = L.map('mapCon').setView([39.9, 116.4], 9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '朱鹏飞的地图'
+    }).addTo(map);
+
+    L.marker([39.9, 116.4]).addTo(map).bindPopup('北京啊').openPopup();
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.main-page {
+  width: 100%;
+  height: 100%;
+}
+#mapCon {
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+}
 </style>
