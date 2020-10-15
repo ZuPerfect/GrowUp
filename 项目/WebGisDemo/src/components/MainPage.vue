@@ -5,16 +5,22 @@
 -->
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>朱鹏飞</h2>
-    <el-row>
-      <el-button>默认按钮</el-button>
-      <el-button type="primary">主要按钮</el-button>
-      <el-button type="success">成功按钮</el-button>
-      <el-button type="info">信息按钮</el-button>
-      <el-button type="warning">警告按钮</el-button>
-      <el-button type="danger">危险按钮</el-button>
-    </el-row>
+    <header>
+      <hgroup>
+        <h1>页眉主标题</h1>
+        <h1>页眉副标题</h1>
+      </hgroup>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <footer>
+      原创作者;版权信息;联系方式;文档相关链接等...
+    </footer>
   </div>
 </template>
 
