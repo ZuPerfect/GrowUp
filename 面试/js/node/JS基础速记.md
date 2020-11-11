@@ -36,8 +36,8 @@ a === void 0
 a === undefined
 // 但是undefined不是保留字，在低版本的浏览器中可以被赋值
 let undefined =1
-// 所以使用void 0来判断，代码量少，而且优雅，为什么可以这么判断，因为void后面随便跟上一个表达式，返回的都是undefined
 ```
 # 🐸类型转换
-
+## 转Boolean
+在条件判断时，除了undefined、null、''、0、-0、false、NaN，其他所有值都转成true。
 
