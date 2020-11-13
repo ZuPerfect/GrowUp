@@ -1,5 +1,6 @@
 
 
+
 # 时时刻刻准备着！(ง •_•)ง
 
 ## 🔑前端经典的面试题 🔑
@@ -28,21 +29,21 @@
 ### 正则表达式
 最近断断续续的在B站上看了“后盾人”的教程之后，也感受到了正则表达式的方便，所以现在此处留个空位，后面我将会把自己学习到的总结到这里，以加深记忆和理解！
 
-## 📖博客📖
+## 📖笔记📖
 
-[随笔](./博客/随笔.md)
+[随笔](./笔记/随笔.md)
 
-[angularJs札记](./博客/angularJs札记.md)
+[angularJs札记](./笔记/angularJs札记.md)
 
-[JavaScript数组中的slice方法和aplice方法的区别](./博客/JavaScript数组中的slice方法和aplice方法的区别.md)
+[JavaScript数组中的slice方法和aplice方法的区别](./笔记/JavaScript数组中的slice方法和aplice方法的区别.md)
 
-[javascript之break](./博客/javascript之break.md)
+[javascript之break](./笔记/javascript之break.md)
 
-[js自定义事件](./博客/js自定义事件.md)
+[js自定义事件](./笔记/js自定义事件.md)
 
 # 尾
 
 这里通常会放一张自己喜欢的照片
 
 ## 静宁县西环路
- ![home](博客/img/home.jpg "home")
+ ![home](笔记/img/home.jpg "home")
