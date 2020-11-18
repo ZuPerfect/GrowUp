@@ -1,5 +1,4 @@
 
-
 在JavaScript中，类的实现是基于其原型继承机制的。如果两个实例都从同一个原型对象上继承了属性，我们说它们是同一个类的实例。
 # ES5中的继承
 ``` js
@@ -36,5 +35,33 @@ Man.prototype = Object.create(Person.prototype);
 
 
 // 3、维护Man原型上的constructor属性
-Man.prototype.constructor = Map;
+Man.prototype.constructor = Man;
+```
+
+# ES6中的继承
+es6引入了class、extends、super、static(部分为ES2016标准)
+``` js
+// 定义父类
+class Person {
+    constructor(opt){
+        this.name = opt.name;
+        this.age = opt.age;
+    }
+    getName(){
+        return this.name;
+    }
+    // 静态方法，也可被继承
+    static getAge(){
+        return this.age;
+    }
+}
+
+// 定义子类
+class Man extends Person {
+    constructor(opt){
+        // 如果有super，需要放在第一句执行
+        super(opt);
+        this.job = 'JS'
+    }
+}
 ```
