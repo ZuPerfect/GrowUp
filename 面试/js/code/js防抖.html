@@ -1,0 +1,58 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2020-11-23 16:45:42
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js防抖</title>
+</head>
+
+<body>
+    <input id='inputEl' type="text">
+    <div id="output" style="width: 200px;height:100px;"></div>
+    <script>
+        var num = 0;
+        function debounce(fn, wait) {
+            // 使用闭包保留计时器，而不污染全局环境变量
+            var timeouter = null;
+            return function () {
+                // 这里返回的函数是每次用户实际调用的防抖函数
+                // 如果已经设定过定时器了就清空上一次的定时器
+                // 开始一个新的定时器，延迟执行用户传入的方法
+                if (timeouter) {
+                    clearTimeout(timeouter);
+                }
+                // 重新计时
+                timeouter = setTimeout(fn, wait)
+            }
+        }
+
+        function changeCallback() {
+            // 使用一个大循环模拟一个时间复杂高的计算
+            for (let i = 0; i < 100000000; i++) {
+                num += i;
+            }
+            document.getElementById('output').innerText = num;
+        }
+
+        document.getElementById('inputEl').oninput = debounce(changeCallback, 500);
+
+
+        // var num = 0;
+        // function changeCallback() {
+        //     // 使用一个大循环模拟一个时间复杂高的计算
+        //     for (let i = 0; i < 100000000; i++) {
+        //         num += i;
+        //     }
+        //     document.getElementById('output').innerText = num;
+        // }
+        // document.getElementById('inputEl').oninput = changeCallback;
+    </script>
+</body>
+
+</html>
