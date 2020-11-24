@@ -7,7 +7,7 @@
 函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。持续触发scroll事件时，并不执行handle函数，当1000毫秒内没有触发scroll事件时，才会延时触发scroll事件。
 ## 几个应用场景
 在频繁的事件回调中做复杂的计算，比如在input输入框中输入内容的时候需要试试的校验输入内容的正确型，而且这个校验算法又是比较复杂耗时的，如果我们使用普通的写法会怎么样呢？我现在可以写一个常规的写法，看看效果。
-``` js
+``` html
 <input id='inputEl' type="text">
 <div id="output" style="width: 200px;height:100px;"></div>
 <script>
@@ -30,7 +30,7 @@
 
 然后针对这个问题，我们写一个简单的防抖函数，我们要实现的防抖是：如果用户触发这个函数的时间小于我们设置的防抖间隔（wait）的时候，就不调用该函数，大于防抖间隔才调用。
 ## shut up！show me the code！
-``` js
+``` html
 <input id='inputEl' type="text">
 <div id="output" style="width: 200px;height:100px;"></div>
 <script>
