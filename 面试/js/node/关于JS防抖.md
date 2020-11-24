@@ -59,6 +59,7 @@
     }
 
     document.getElementById('inputEl').oninput = debounce(changeCallback, 500);
+</script>
 ```
 然后我们在来看看效果
 
