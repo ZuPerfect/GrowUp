@@ -1,0 +1,58 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2020-11-23 16:45:42
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js防抖-立即执行</title>
+</head>
+
+<body>
+    <input id='btnEl' type="button" value="按钮" />
+    <div id="output" style="width: 200px;height:100px;"></div>
+    <script>
+        var num = 0;
+        function debounce(fn, wait = 500, immediate = true) {
+            var timer = null;
+            const later = function () {
+                return setTimeout(function () {
+                    timer = null;
+                    if (!immediate) {
+                        fn.apply(this, arguments);
+                    }
+                }, wait);
+            }
+
+            return function () {
+                if (!timer) {
+                    timer = later();
+                    if (immediate) {
+                        fn.apply(this, arguments);
+                    }
+                } else {
+                    clearTimeout(timer)
+                    timer = later()
+                }
+            }
+        }
+
+        function changeCallback() {
+            // 使用一个大循环模拟一个时间复杂高的计算
+            console.log('复杂计算开始');
+            for (let i = 0; i < 100000000; i++) {
+                num += i;
+            }
+            document.getElementById('output').innerText = num;
+            console.log('复杂计算结束');
+        }
+
+        document.getElementById('btnEl').onclick = debounce(changeCallback, 1000, false);
+    </script>
+</body>
+
+</html>
