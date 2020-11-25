@@ -48,6 +48,9 @@
 
 [turf-->计算两个polygon的交点](./笔记/turf之计算两个polygon的交点.md)
 
+
+[turf-->计算polygon或linestring的自交点](./笔记/turf之计算polygon或linestring的自交点.md)
+
 # 尾
 
 这里通常会放一张自己喜欢的照片
