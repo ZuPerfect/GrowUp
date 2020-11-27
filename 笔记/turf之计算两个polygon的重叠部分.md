@@ -40,3 +40,12 @@ var intersection = turf.intersect(poly1, poly2);
 ```
 ## 官网地址
 [http://turfjs.org/docs/#intersect](http://turfjs.org/docs/#intersect)
+
+## bug及解决方案
+目前turf的该方法计算1米左右精度的计算的时候，存在计算没有结算结果的bug，可以用jsts的intersection方法计算，代码如下：
+``` js
+  const jstsReader=new jsts.io.GeoJSONReader(this.factory);
+  const jstsGeometry1 = jstsReader.read(geometry1);
+  const jstsGeometry2 = jstsReader.read(geometry2);
+  var intersection = jstsReader.write(jstsGeometry1.intersection(jstsGeometry2));
+```
