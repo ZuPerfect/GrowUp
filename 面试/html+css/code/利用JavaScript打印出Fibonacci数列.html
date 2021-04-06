@@ -1,0 +1,117 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2021-04-02 13:35:26
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 斐波那契数列的计算规则，从第三项开始，每一项都等于前两项之和
+    // let fibonacci = [0, 1];
+    // for (let i = 2; i < 1000; i++) {
+    //   fibonacci.push(fibonacci[i - 2] + fibonacci[i - 1]);
+    // }
+    // console.log(fibonacci);
+
+    // function fn(n) {
+    //   if (n === 0) {
+    //     return 0;
+    //   } else if (n === 1) {
+    //     return 1;
+    //   }else{
+    //     return fn(n - 1) + fn(n - 2)
+    //   }
+    // }
+
+    // for (let i = 0; i < 10; i++) {
+    //   console.log(fn(i));
+    // }
+
+
+    // 用JavaScript实现一个函数，用来统计一个英文字符串中出现次数最多的字母
+    // var str = 'hsgsgshsbadgsadgyegyhudctygsacsdfasdgyhausdasndkkasftyghjuasdghasjhndhauisjnbdhashjhhdjnhcdjunshecjusnhdjumdhasohdashdha';
+    // var tempObj = {};
+    // for (let i = 0; i < str.length; i++) {
+    //   tempObj[str[i]] = tempObj[str[i]] ? tempObj[str[i]] + 1 : 1;
+    // }
+
+    // var max = 0;
+    // var maxKey = '';
+    // for (const key in tempObj) {
+    //   if (tempObj[key] > max) {
+    //     max = tempObj[key];
+    //     maxKey = key;
+    //   }
+    // }
+    // console.log('数量最多的是', maxKey, '为', max);
+
+    var obj = [
+      { id: 1, parent: null },
+      { id: 2, parent: 1 },
+      { id: 3, parent: 2 },
+      { id: 4, parent: 22 },
+    ];
+    // 转换为obj2格式：
+    var obj2 = {
+      obj: {
+        id: 1,
+        parent: null,
+        child: {
+          id: 2,
+          parent: 1,
+          child: {
+            id: 3,
+            parent: 2
+          }
+        }
+      }
+    }
+
+
+    // 找爸爸
+    function getParentById(id, obj) {
+      if (obj) {
+        if (obj.id === id) {
+          return obj;
+        } else {
+          // 返回父对象的引用
+          return getParentById(id, obj.child);
+        }
+      } else {
+        return null;
+      }
+    }
+
+
+    function format(objArr) {
+      let temp = {};
+      for (const obj of objArr) {
+        if (obj.parent === null) {
+          temp = { ...obj }
+        } else {
+          let p = getParentById(obj.parent, temp);
+          if (p) {
+            p.child = { ...obj }
+          }else{
+            console.log('找不到对应的parent！');
+          }
+        }
+      }
+      return temp;
+    }
+    console.log(format(obj));
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
