@@ -1,3 +1,8 @@
+<!--
+ * @Author: zhupengfei6623
+ * @Date: 2020-11-27 11:44:16
+ * @Description: file content
+-->
 
 时时刻刻准备着！(ง •_•)ง
 
@@ -52,6 +57,9 @@
 
 
 [turf-->计算polygon或linestring的自交点](./笔记/turf之计算polygon或linestring的自交点.md)
+
+## 🖋 vue
+[vue_element-->vue项目中，如何试用el-upload控件上传预览tiff格式图片](./笔记/elUpload控件上传预览tiff格式图片.md)
 
 # 尾
 
